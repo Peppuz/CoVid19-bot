@@ -10,7 +10,7 @@ const fs = require("fs");
  * Author: Peppuz - peppuzvitale@gmail.com
  */
 
-var data = require('./covid19.json') // file Open a json 
+var data = require('./covid19.txt') // file Open a json 
 const sito = 'http://www.salute.gov.it/nuovocoronavirus'
 const token = ''; // ADD HERE YOUR  TOKEN
 const bot = new TelegramBot(token, { polling: true });
@@ -62,7 +62,7 @@ async function BrowserCall() {
   console.log("[ ] FULL Text scraped");
 
   // save for the masses without using a database
-  fs.writeFile("./covid19.json", text, (err) => { if (err) console.log(err); console.log("Successfully Written to File."); });
+  fs.writeFile("./covid19.txt", text, (err) => { if (err) console.log(err); console.log("Successfully Written to File."); });
   data = text
 }
 
