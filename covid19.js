@@ -10,7 +10,15 @@ const fs = require("fs");
  * Author: Peppuz - peppuzvitale@gmail.com
  */
 
-var data = require('./covid19.txt') // file Open a json 
+var data = ""
+fs.readFile('./covid19.txt', (err, dat) => {
+  if (err) console.log(err);
+
+  data = dat
+  console.log("[ ] Read Data File")
+})
+
+// file Open a json 
 const sito = 'http://www.salute.gov.it/nuovocoronavirus'
 const token = ''; // ADD HERE YOUR  TOKEN
 const bot = new TelegramBot(token, { polling: true });
