@@ -24,7 +24,7 @@ const token = ''; // ADD HERE YOUR  TOKEN
 const bot = new TelegramBot(token, { polling: true });
 
 // Bot Event Handler - Reply to any message incoming
-bot.on('message', (msg) => bot.sendMessage(msg.chat.id, data, { parse_mode: 'markdown' }))
+bot.on('message', (msg) => bot.sendMessage(msg.chat.id, data, { parse_mode: 'markdown', disable_web_page_preview: true}))
 
 // Puppeteer scraper
 async function BrowserCall() {
